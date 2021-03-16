@@ -1,0 +1,16 @@
+<div *ngIf="property">
+    <h2>{{ property.suburb | uppercase }} Details</h2>
+
+    <div>
+        <label for="">Suburb</label>
+        <input id="property-suburb" [(ngModel)]="property.suburb" placeholder="Suburb" />
+        <label for="">Rooms</label>
+        <input id="property-rooms" [(ngModel)]="property.rooms" placeholder="Rooms" />
+        <label for="">Price</label>
+        <input id="property-price" [(ngModel)]="property.price" placeholder="Price" />
+        
+    
+    </div>
+    <button (click)="goback()">go back</button>
+    <button (click)="save()">save</button>
+</div>

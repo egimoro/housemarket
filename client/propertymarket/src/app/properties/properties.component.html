@@ -1,0 +1,28 @@
+<h2>Properties</h2>
+
+<div>
+    <label for="new-property" id="new-property">Suburb: </label>
+    <input for="new-property" #propertySuburb />
+
+    <label for="new-property" id="new-property">Rooms: </label>
+    <input for="new-property" #propertyRooms/>
+
+    <label for="new-property" id="new-property">Price: </label>
+    <input for="new-property" #propertyPrice/>
+
+    <button class="add-button" (click)="add(propertySuburb.value, propertyRooms.value, 
+    propertyPrice.value); propertySuburb.value=''; propertyRooms.value=''; propertyPrice.value=''" >
+        Add property
+    </button>
+</div>
+
+<ul class="properties">
+    <li *ngFor="let property of properties">
+        <a routerLink="/markets/{{property.id}}">
+            {{property.suburb}}
+        </a>
+        <button class="delete" title="delete property" 
+        (click)="delete(property)">x</button>
+    </li>
+
+</ul>

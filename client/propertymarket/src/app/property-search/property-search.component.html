@@ -1,0 +1,12 @@
+<div id="search-component">
+    <label for="search-box">Property Search</label>
+    <input #searchBox id="search-box" (input)="search(searchBox.value)" />
+    <ul class="search-result">
+        <li *ngFor='let property of properties$ | async'>
+            <a routerLink='/markets/{{property.id}}'>
+                {{property.suburb}}
+            </a>
+        </li>
+
+    </ul>
+</div>

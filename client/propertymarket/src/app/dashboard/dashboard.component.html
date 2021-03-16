@@ -1,0 +1,9 @@
+<h2>Top Properties</h2>
+<div class="property-menu">
+    <a *ngFor='let property of properties' routerLink='/markets/{{property.id}}'>
+        {{property.suburb}}
+    </a>
+
+</div>
+
+<app-property-search></app-property-search>
