@@ -12,6 +12,7 @@ import { SellerDetailComponent } from './seller-detail/seller-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PropertySearchComponent } from './property-search/property-search.component';
+import { SellerSearchComponent } from './seller-search/seller-search.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { PropertySearchComponent } from './property-search/property-search.compo
     SellerDetailComponent,
     MessagesComponent,
     DashboardComponent,
-    PropertySearchComponent
+    PropertySearchComponent,
+    SellerSearchComponent
   ],
   imports: [
     BrowserModule,

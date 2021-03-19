@@ -13,7 +13,6 @@ class Propertyh(models.Model):
 
 
 class Seller(models.Model):
-    properties = models.ForeignKey(Propertyh, on_delete=models.CASCADE)
     name = models.CharField(max_length=250)
     contact = models.CharField(max_length=250)
 

@@ -8,5 +8,5 @@ urlpatterns = [
     path('markets/suburb/', views.PropertyListView.as_view()),
     path('sellers', views.seller_list),
     path('sellers/<int:pk>', views.seller_detail),
-    path('sellers/name/', views.SellerListView.as_view(),)
+    path('sellers/name/', views.SellerListView.as_view())
 ] 

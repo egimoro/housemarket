@@ -62,7 +62,7 @@ def seller_list(request):
         return JsonResponse(serializer.data, safe=False)
 
     elif request.method == 'POST':
-        data = JsonResponse().parse(request)
+        data = JSONParser().parse(request)
         serializer = SellerSerializer(data=data)
         if serializer.is_valid():
             serializer.save()
@@ -72,7 +72,7 @@ def seller_list(request):
 
 @csrf_exempt
 def seller_detail(request, pk):
-    try: 
+    try:
         seller = Seller.objects.get(pk=pk)
     except Seller.DoesNotExist:
         return HttpResponse(status=404)
@@ -88,7 +88,7 @@ def seller_detail(request, pk):
             serializer.save()
             return JsonResponse(serializer.data)
         return JsonResponse(serializer.errors, status=400)
-
+    
     elif request.method == 'DELETE':
         seller.delete()
         return HttpResponse(status=204)
@@ -98,4 +98,4 @@ class SellerListView(generics.ListAPIView):
     queryset = Seller.objects.all()
     serializer_class = SellerSerializer
     filter_backends = [filters.SearchFilter]
-    search_fields = ['name', 'properties__suburb']   
+    search_fields = ['name']   

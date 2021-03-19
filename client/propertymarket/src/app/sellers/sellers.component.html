@@ -1,1 +1,26 @@
-<p>sellers works!</p>
+<h2>Sellers</h2>
+
+<app-seller-search></app-seller-search>
+
+<div>
+    <label for="">Seller name: </label>
+    <input  #sellerName>
+    <label for="">Seller contact: </label>
+    <input  #sellerContact>
+
+    <button class="add-button" (click)="add(sellerName.value, sellerContact.value);
+    sellerName.value=''; sellerContact.value=''" >
+        Add Seller
+    </button>
+
+    <ul>
+        <li *ngFor="let seller of sellers">
+            <a routerLink="/sellers/{{seller.id}}">
+                {{seller.name}}
+            </a>
+            <button class="delete" title="delete seller" 
+            (click)="delete(seller)">x</button>
+        </li>
+    </ul>
+
+</div>

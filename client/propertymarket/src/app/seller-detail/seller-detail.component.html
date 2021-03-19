@@ -1,1 +1,13 @@
-<p>seller-detail works!</p>
+<div *ngIf="seller">
+    <h2>{{seller.name | uppercase}} Details</h2>
+    <div>
+        <label for="">Seller name:</label>
+        <input  [(ngModel)]="seller.name" placeholder="Seller name" />
+
+        <label for="">Seller contact:</label>
+        <input  [(ngModel)]="seller.contact" placeholder="Seller contact" />
+    </div>
+    <button (click)="goBack()">go back</button>
+    <button (click)="save()">save</button>
+
+</div>
